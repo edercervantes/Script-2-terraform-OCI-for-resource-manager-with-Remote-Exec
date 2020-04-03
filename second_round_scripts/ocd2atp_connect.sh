@@ -24,7 +24,7 @@ sqlplus admin/helloWorld123@orcl4py_high @/home/opc/tmp/second_round_scripts/cre
 sqlplus admin/helloWorld123@orcl4py_high @/home/opc/tmp/second_round_scripts/create_cloud_cred.sql
 
 #send data from object storage to ATPDB using datapump
-impdp admin/helloWorld123@orcl4py_high directory=data_pump_dir credential=py4dev_cred dumpfile= https://objectstorage.us-phoenix-1.oraclecloud.com/n/axouxcauizgc/b/py4dev/o/expdp_alpha.dmp exclude=index, cluster, indextype, materialized_view, materialized_view_log, materialized_zonemap, db_link
+impdp admin/helloWorld123@orcl4py_high directory=data_pump_dir credential=py4dev_cred dumpfile= <*****enter expdp_alpha.dmp url here*****> exclude=index, cluster, indextype, materialized_view, materialized_view_log, materialized_zonemap, db_link
 ######################################################################################^^I need to change the url of expdp_alpha.dmp = <this url is object specific within bucket>
 
 #setting up 'alpha' user's environment
