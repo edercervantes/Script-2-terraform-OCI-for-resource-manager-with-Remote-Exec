@@ -1,6 +1,3 @@
-#first, we are gonna add the cloud user and auth token to create_cloud_cred.sql
-#cd ~/tmp/second_round_scripts
-#sed -i 's+<your cloud userid>++' create_cloud_cred.sql
 
 #unziping lab-resources
 cd ~/tmp
@@ -25,7 +22,7 @@ sqlplus admin/helloWorld123@orcl4py_high @/home/opc/tmp/second_round_scripts/cre
 
 #send data from object storage to ATPDB using datapump
 impdp admin/helloWorld123@orcl4py_high directory=data_pump_dir credential=py4dev_cred dumpfile= <*****enter expdp_alpha.dmp url here*****> exclude=index, cluster, indextype, materialized_view, materialized_view_log, materialized_zonemap, db_link
-######################################################################################^^I need to change the url of expdp_alpha.dmp = <this url is object specific within bucket>
+######################################################################################^^^^We need to change the url of expdp_alpha.dmp = <this url is specific for bucket>
 
 #setting up 'alpha' user's environment
 sqlplus alpha/a1phaOffice1_@orcl4py_high @/home/opc/tmp/second_round_scripts/create_spatial_metadata.sql
